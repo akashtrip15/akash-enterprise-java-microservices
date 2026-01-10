@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.nims</groupId>
+    <artifactId>akash-enterprise-java-microservices</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>nims-api-gateway</module>
+        <module>nims-api-service-registry</module>
+        <module>nims-auth-service</module>
+        <module>nims-patient-service</module>
+        <module>nims-doctor-service</module>
+        <module>nims-appointment-service</module>
+        <module>nims-notification-service</module>
+        <module>nims-payment-service</module>
+    </modules>
+
+</project>
