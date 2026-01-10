@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "doctor_profiles")
+@Table(name = "doctor_profile", schema = "nims")
 @Getter
 @Setter
 @NoArgsConstructor
@@ -13,18 +13,20 @@ import lombok.*;
 public class DoctorProfile {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    @MapsId
-    @JoinColumn(name = "user_id")
-    private User user;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "staff_id", nullable = false, unique = true)
+    private StaffProfile staffProfile;
 
-    private String specialization;
-
+    @Column(nullable = false, unique = true)
     private String licenseNumber;
+
+    @Column(nullable = false)
+    private String specialization;
 
     private Integer experienceYears;
 
-    private String department;
+    private String medicalDepartment;
 }
